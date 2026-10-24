@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Як приєднатися — NordiGO</title>
+  <meta name="description" content="NordiGO — клуб скандинавської ходьби в Україні">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&family=Playfair+Display:wght@400;500&display=swap"
+    rel="stylesheet">
+  <!-- Стили: порядок важен — сначала основа, потом блоки, потом страницы -->
+  <link rel="stylesheet" href="css/base/variables.css">
+  <link rel="stylesheet" href="css/base/reset.css">
+  <link rel="stylesheet" href="css/base/layout.css">
+  <link rel="stylesheet" href="css/components/header.css">
+  <link rel="stylesheet" href="css/components/menu.css">
+  <link rel="stylesheet" href="css/components/footer.css">
+  <link rel="stylesheet" href="css/components/buttons.css">
+  <link rel="stylesheet" href="css/components/star.css">
+  <link rel="stylesheet" href="css/components/modal.css">
+  <link rel="stylesheet" href="css/pages/home.css">
+  <link rel="stylesheet" href="css/pages/what.css">
+  <link rel="stylesheet" href="css/pages/join.css">
+  <link rel="stylesheet" href="css/pages/blog.css">
+  <link rel="stylesheet" href="css/pages/contacts.css">
+  <link rel="stylesheet" href="css/pages/about.css">
+  <!-- Эффекты: можно убрать эту строку и js/effects.js внизу, если не нужны -->
+  <link rel="stylesheet" href="css/components/effects.css">
+  <link rel="stylesheet" href="css/components/tilt.css">
+  <!-- Стекло: подключается последним, поэтому перекрывает остальные стили -->
+  <link rel="stylesheet" href="css/components/glass.css">
+  <script>document.documentElement.classList.add("js")</script>
+</head>
+
+<body>
+  <div class="site">
+
+    <main>
+      <section class="join-top">
+        <div class="join-top__left">
+          <div class="join-top__intro">
+            <h1 class="join-top__title display">Ми у клубі NordiGo пропонуємо два формати тренувань</h1>
+          </div>
+          <div class="join-top__formats bg-teal">
+            <div class="format">
+              <div><b>Долучення до спільноти</b>
+                <p>Тренування на постійній основі</p>
+              </div>
+              <a class="btn" href="contacts.html">Приєднатися</a>
+            </div>
+            <div class="format">
+              <div><b>Випробний період</b>
+                <p>Разове пробне тренування</p>
+              </div>
+              <a class="btn" href="#" data-open-form>Спробувати</a>
+            </div>
+          </div>
+        </div>
+        <img loading="lazy" class="join-top__photo" src="images/club-hero.jpg" alt="Тренер з палицями в парку">
+      </section>
+
+      <section class="know">
+        <div class="container features">
+          <h2 class="title">Що важливо знати до початку тренування:</h2>
+          <div class="features__grid">
+            <article class="feature">
+              <div class="feature__num">01</div>
+              <h3 class="feature__title">Одяг</h3>
+              <p>Вам знадобиться зручні одяг та взуття. Краще залиште “все найкраще” вдома і приходьте займатися в тому,
+                в чому вам дійсно зручно ходити або бігати.</p>
+            </article>
+            <article class="feature">
+              <div class="feature__num">02</div>
+              <h3 class="feature__title">Техніка ходьби</h3>
+              <p>Не перейматеся, якщо ви не знаєте як “ходити” правильно. Наші інструктори радо навчать вас, як та що
+                потрібно робити.</p>
+            </article>
+            <article class="feature">
+              <div class="feature__num">03</div>
+              <h3 class="feature__title">План тренування</h3>
+              <p>Ми почнемо тренування із 10-хвилинної розминки, потім приблизно 40 хвилин власне ходьби і 10-хвилинна
+                “заминка” наприкінці.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="insta">
+        <div class="container">
+          <h2 class="insta__title display">Підписуйся на наш інстаграм</h2>
+          <a class="star" href="join.html"><span>Го з нами</span></a>
+          <div class="carousel">
+            <div class="carousel__track">
+              <a class="carousel__item" href="#"><img src="images/insta-1.jpg" alt="Фото з Instagram"></a>
+              <a class="carousel__item" href="#"><img src="images/insta-2.jpg" alt="Фото з Instagram"></a>
+              <a class="carousel__item" href="#"><img src="images/insta-3.jpg" alt="Фото з Instagram"></a>
+              <a class="carousel__item" href="#"><img src="images/insta-1.jpg" alt="Фото з Instagram"></a>
+              <a class="carousel__item" href="#"><img src="images/insta-2.jpg" alt="Фото з Instagram"></a>
+              <a class="carousel__item" href="#"><img src="images/insta-3.jpg" alt="Фото з Instagram"></a>
+            </div>
+          </div>
+          <div class="carousel__controls">
+            <button class="carousel__btn carousel__btn--prev" aria-label="Назад"><img src="images/icons/arrow-left.svg"
+                alt=""></button>
+            <button class="carousel__btn carousel__btn--next" aria-label="Вперед"><img
+                src="images/icons/arrow-right.svg" alt=""></button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+  </div>
+
+  <script src="js/components.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/effects.js"></script>
+  <script src="js/tilt.js"></script>
+  <script src="js/carousel.js"></script>
+</body>
+
+</html>

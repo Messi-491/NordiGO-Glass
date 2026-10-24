@@ -1,0 +1,121 @@
+/* ===== СТРАНИЦА "КОНТАКТИ" (contacts.html) ===== */
+.page-contacts .site {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.contacts {
+  flex: 1;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-top: 66px;
+}
+
+.person {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 27px 15px 30px;
+}
+
+.person:first-child {
+  border-right: 1px solid rgba(255, 255, 255, .35);
+  padding-right: 84px;
+}
+
+.person:last-of-type {
+  padding-left: 48px;
+}
+
+.person__name {
+  font-size: clamp(22px, 2.7vw, 39px);
+  letter-spacing: 0.01em;
+  text-transform: none;
+  line-height: 1.1;
+}
+
+.person__role {
+  font-size: 18px;
+  font-weight: 500;
+  margin-top: 8px;
+}
+
+.person__photo {
+  width: 330px;
+  height: 396px;
+  object-fit: cover;
+  margin: 33px 0 22px;
+}
+
+.person a {
+  display: block;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.person a:hover {
+  opacity: .7;
+}
+
+.contacts .star {
+  left: 50%;
+  top: 22px;
+  margin-left: -165px;
+  width: 330px;
+}
+
+@media (max-width: 1100px) {
+  .person__photo {
+    width: 80%;
+    max-width: 360px;
+    height: auto;
+    aspect-ratio: 440 / 528;
+  }
+
+  .person,
+  .person:first-child,
+  .person:last-of-type {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .contacts .star {
+    width: 26vw;
+    margin-left: -13vw;
+    top: 70px;
+  }
+
+  .person__role,
+  .person a {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contacts {
+    grid-template-columns: 1fr;
+    padding-top: 56px;
+  }
+
+  .person:first-child {
+    border-right: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, .35);
+  }
+
+  .person__photo {
+    max-width: 260px;
+    margin: 24px 0 18px;
+  }
+
+  .person__name {
+    font-size: 28px;
+  }
+
+  .contacts .star {
+    display: none;
+  }
+}

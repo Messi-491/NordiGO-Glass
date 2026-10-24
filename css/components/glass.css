@@ -1,0 +1,504 @@
+/* ===== ЭФФЕКТ СТЕКЛА =====
+   Весь "стеклянный" вид собран в этом файле. Подключается ПОСЛЕДНИМ, поэтому перекрывает старые стили.
+   Настройки (прозрачность, размытие, скругление) — в css/base/variables.css, строки --glass-*.
+   Не нравится — убери <link> на glass.css из HTML, сайт вернётся к прежнему виду.
+
+   Содержание:  1 фон · 2 стеклянные блоки · 3 шапка и подвал · 4 меню и окна
+                5 карточки секций · 6 кнопки · 7 фото · 8 страницы · 9 телефон */
+
+
+/* ---------- 1. ФОН: цветные пятна, которые размывает стекло ---------- */
+body {
+  background: #2f4742;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: -10%;
+  z-index: -1;
+  background:
+    radial-gradient(40% 40% at 15% 20%, rgba(255, 78, 36, .45), transparent 70%),
+    radial-gradient(45% 45% at 85% 25%, rgba(126, 144, 112, .95), transparent 70%),
+    radial-gradient(50% 50% at 70% 85%, rgba(80, 160, 150, .75), transparent 70%),
+    radial-gradient(45% 45% at 10% 85%, rgba(158, 171, 142, .7), transparent 70%),
+    linear-gradient(160deg, #2f4742, #50726D 50%, #3b5a4a);
+  animation: glass-drift 28s ease-in-out infinite alternate;
+}
+
+@keyframes glass-drift {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  to {
+    transform: translate3d(-3%, 2%, 0) scale(1.08);
+  }
+}
+
+.site {
+  background: transparent;
+}
+
+/* Широкие цветные полосы (раньше сплошные) — теперь лёгкая полупрозрачная плёнка */
+.bg-sage {
+  background: rgba(255, 255, 255, .05);
+}
+
+.bg-teal {
+  background: rgba(80, 114, 109, .2);
+}
+
+
+/* ---------- 2. СТЕКЛЯННЫЕ БЛОКИ: одно правило для всех ---------- */
+.header,
+.footer,
+.menu__panel,
+.modal__box,
+.article__box,
+.hero__about,
+.popular__text,
+.what-intro__text,
+.history__text,
+.popular-world__text,
+.why__text,
+.pluses__text,
+.feature,
+.cta__col,
+.join-top__formats,
+.card,
+.about-card,
+.person {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: var(--glass-blur);
+  border-radius: var(--glass-radius);
+  text-shadow: 0 1px 8px rgba(0, 0, 0, .35);
+  /* тонкая тень, чтобы текст читался на прозрачном стекле */
+}
+
+/* Если браузер не умеет размытие — делаем блоки плотнее, чтобы текст читался */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+
+  .header,
+  .footer,
+  .menu__panel,
+  .modal__box,
+  .article__box,
+  .hero__about,
+  .popular__text,
+  .what-intro__text,
+  .history__text,
+  .popular-world__text,
+  .why__text,
+  .pluses__text,
+  .feature,
+  .cta__col,
+  .join-top__formats,
+  .card,
+  .about-card,
+  .person {
+    background: rgba(60, 90, 80, .85);
+  }
+}
+
+
+/* ---------- 3. ШАПКА И ПОДВАЛ ---------- */
+/* Шапка — плавающая стеклянная «таблетка», остаётся сверху при прокрутке */
+.header {
+  position: fixed;
+  top: 12px;
+  left: 50%;
+  width: calc(100% - 32px);
+  max-width: calc(var(--site-width) - 32px);
+  height: 54px;
+  transform: translateX(-50%);
+  border-radius: 999px;
+  padding: 0 26px;
+}
+
+/* Когда открыто меню или форма — шапка без стекла, чтобы не двоилось */
+body.no-scroll .header {
+  background: none;
+  border-color: transparent;
+  box-shadow: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+.burger span {
+  box-shadow: 0 0 6px rgba(0, 0, 0, .25);
+}
+
+.footer {
+  margin: 16px;
+  border-radius: 999px;
+  padding: 0 28px;
+}
+
+
+/* ---------- 4. МЕНЮ И ВСПЛЫВАЮЩИЕ ОКНА ---------- */
+.menu__panel {
+  border-radius: 0;
+  border-width: 0 0 0 1px;
+  /* меню почти непрозрачное: задний фон не должен отвлекать */
+  background: linear-gradient(135deg, rgba(80, 114, 109, .97), rgba(47, 71, 66, .97));
+  /* .97 = всего 3% прозрачности */
+  -webkit-backdrop-filter: blur(8px) saturate(160%);
+  backdrop-filter: blur(8px) saturate(160%);
+}
+
+.menu__photo {
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, .35);
+}
+
+.menu__link {
+  transition: opacity .25s, padding-left .25s;
+}
+
+.menu__link:hover {
+  padding-left: 14px;
+}
+
+/* Затемнение за окнами — размытое стекло */
+.modal {
+  background: rgba(20, 32, 30, .2);
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+}
+
+.article {
+  background: rgba(20, 32, 30, .2);
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+}
+
+.article__box {
+  padding: 0;
+  overflow-y: auto;
+}
+
+/* Окна статьи и формы: плотнее стекло, чтобы текст хорошо читался */
+.article__box,
+.modal__box {
+  background: linear-gradient(135deg, rgba(47, 71, 66, .82), rgba(47, 71, 66, .72));
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  backdrop-filter: blur(14px) saturate(140%);
+}
+
+/* Полосу прокрутки не показываем (листать можно колесом и пальцем) */
+.article__box,
+.modal__box,
+.menu__panel {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.article__box::-webkit-scrollbar,
+.modal__box::-webkit-scrollbar,
+.menu__panel::-webkit-scrollbar {
+  display: none;
+}
+
+.article__img {
+  border-radius: var(--glass-radius) var(--glass-radius) 0 0;
+}
+
+.article__close {
+  background: rgba(255, 255, 255, .2);
+  border: 1px solid var(--glass-border);
+}
+
+.article__close:hover {
+  background: rgba(255, 255, 255, .35);
+}
+
+/* Поля формы — тоже стеклянные */
+.modal__input {
+  background: rgba(255, 255, 255, .14);
+  border: 1px solid rgba(255, 255, 255, .5);
+  border-radius: 14px;
+}
+
+.modal__input:focus {
+  background: rgba(255, 255, 255, .2);
+  border-color: var(--white);
+}
+
+.modal__submit {
+  background: rgba(255, 78, 36, .55);
+  border: 1px solid rgba(255, 255, 255, .4);
+  border-radius: 14px;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+
+.modal__submit:hover {
+  background: rgba(255, 78, 36, .95);
+}
+
+
+/* ---------- 5. КАРТОЧКИ И ТЕКСТОВЫЕ БЛОКИ ---------- */
+/* Текстовые блоки: добавляем внутренние поля, чтобы текст не липнул к краю стекла */
+.hero__about,
+.popular__text,
+.what-intro__text,
+.history__text,
+.popular-world__text,
+.why__text,
+.pluses__text {
+  padding: 34px;
+}
+
+/* «01 02 03»: три ровные стеклянные карточки вместо колонок с линиями */
+@media (min-width: 769px) {
+  .features__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+}
+
+.feature,
+.feature:nth-child(2),
+.feature:nth-child(3) {
+  padding: 26px 30px 34px;
+}
+
+.feature:nth-child(n+2)::before {
+  display: none;
+}
+
+.feature p {
+  max-width: none;
+}
+
+.feature__num {
+  color: rgba(255, 255, 255, .4);
+}
+
+/* Две колонки «Приєднатися / Спробувати» */
+.cta {
+  gap: 16px;
+  padding: 16px;
+}
+
+.cta__col.bg-teal {
+  background: linear-gradient(135deg, rgba(80, 114, 109, .20), rgba(80, 114, 109, .20));
+}
+
+/* Блог и «Про клуб» */
+.card {
+  padding: 14px 14px 20px;
+}
+
+.card__title,
+.card__meta {
+  padding: 0 8px;
+}
+
+.about-card {
+  border-color: var(--glass-border);
+}
+
+.person {
+  padding: 27px 20px 30px;
+}
+
+.person:first-child {
+  border-right: 1px solid var(--glass-border);
+  padding-right: 20px;
+}
+
+.person:last-of-type {
+  padding-left: 20px;
+}
+
+.contacts {
+  gap: 24px;
+  padding: 78px 24px 24px;
+}
+
+
+/* ---------- 6. КНОПКИ ---------- */
+.btn {
+  background: rgba(255, 255, 255, .15);
+  border: 1px solid var(--glass-border);
+  border-radius: 22px;
+  box-shadow: var(--glass-shadow);
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+}
+
+.btn:hover,
+.bg-teal .btn:hover {
+  background: rgba(255, 255, 255, .85);
+  color: #2f4742;
+}
+
+.btn-orange {
+  background: rgba(255, 78, 36, .55);
+  border: 1px solid rgba(255, 255, 255, .4);
+  border-radius: 12px;
+  padding: 7px 12px;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+
+.btn-orange:hover {
+  background: rgba(255, 78, 36, .95);
+}
+
+.to-top {
+  background: rgba(255, 255, 255, .12);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.star {
+  filter: drop-shadow(0 10px 24px rgba(0, 0, 0, .28));
+}
+
+.blog__tab.is-active {
+  text-shadow: 0 0 18px rgba(255, 255, 255, .5);
+}
+
+
+/* ---------- 7. ФОТО: скругления и тонкая светлая рамка ---------- */
+.hero__forest img,
+.hero__road,
+.go__photo,
+.history__photo,
+.pluses__photo,
+.card__img,
+.about-card img,
+.person__photo,
+.carousel__item img {
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, .3);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, .25);
+}
+
+/* Коллажи с прозрачными местами: рамку и скругление не ставим, тень идёт по форме самих фото */
+.popular__collage,
+.what-intro__collage,
+.popular-world__collage {
+  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, .28));
+}
+
+.join-top__photo {
+  border-radius: 40px 0 0 40px;
+}
+
+.manifest__row-4 img {
+  border-radius: 999px;
+}
+
+
+/* ---------- 8. ОСОБЕННОСТИ СТРАНИЦ ---------- */
+.join-top__formats {
+  margin: 0 16px 16px;
+}
+
+.format+.format {
+  border-left-color: var(--glass-border);
+}
+
+
+/* ---------- 9. ТЕЛЕФОН ---------- */
+@media (max-width: 1280px) {
+  .features__grid {
+    padding: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --glass-radius: 20px;
+  }
+
+  .header {
+    top: 8px;
+    width: calc(100% - 16px);
+    height: 48px;
+    padding: 0 18px;
+  }
+
+  .footer {
+    margin: 12px 8px;
+    border-radius: 28px;
+    padding: 22px 15px;
+  }
+
+  .hero__about,
+  .popular__text,
+  .what-intro__text,
+  .history__text,
+  .popular-world__text,
+  .why__text,
+  .pluses__text {
+    padding: 18px;
+  }
+
+  .popular__text {
+    padding: 12px;
+  }
+
+  .features__grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .feature,
+  .feature:nth-child(2),
+  .feature:nth-child(3) {
+    padding: 18px 20px 24px;
+    margin-bottom: 0;
+  }
+
+  .feature:not(:last-child) {
+    max-width: 320px;
+  }
+
+  .feature {
+    max-width: 320px;
+  }
+
+  .cta {
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .card {
+    padding: 10px 10px 16px;
+  }
+
+  .contacts {
+    padding: 66px 12px 12px;
+    gap: 16px;
+  }
+
+  .person:first-child {
+    border-bottom: 1px solid var(--glass-border);
+  }
+
+  .join-top__formats {
+    margin: 0 10px 10px;
+  }
+
+  .join-top__photo {
+    border-radius: 0 0 28px 28px;
+  }
+
+  .menu__panel {
+    border-width: 0;
+  }
+
+  .btn {
+    border-radius: 16px;
+  }
+}

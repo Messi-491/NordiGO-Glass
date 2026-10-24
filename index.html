@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NordiGO — клуб скандинавської ходьби</title>
+  <meta name="description" content="NordiGO — клуб скандинавської ходьби в Україні">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&family=Playfair+Display:wght@400;500&display=swap"
+    rel="stylesheet">
+  <!-- Стили: порядок важен — сначала основа, потом блоки, потом страницы -->
+  <link rel="stylesheet" href="css/base/variables.css">
+  <link rel="stylesheet" href="css/base/reset.css">
+  <link rel="stylesheet" href="css/base/layout.css">
+  <link rel="stylesheet" href="css/components/header.css">
+  <link rel="stylesheet" href="css/components/menu.css">
+  <link rel="stylesheet" href="css/components/footer.css">
+  <link rel="stylesheet" href="css/components/buttons.css">
+  <link rel="stylesheet" href="css/components/star.css">
+  <link rel="stylesheet" href="css/components/modal.css">
+  <link rel="stylesheet" href="css/pages/home.css">
+  <link rel="stylesheet" href="css/pages/what.css">
+  <link rel="stylesheet" href="css/pages/join.css">
+  <link rel="stylesheet" href="css/pages/blog.css">
+  <link rel="stylesheet" href="css/pages/contacts.css">
+  <link rel="stylesheet" href="css/pages/about.css">
+  <!-- Эффекты: можно убрать эту строку и js/effects.js внизу, если не нужны -->
+  <link rel="stylesheet" href="css/components/effects.css">
+  <link rel="stylesheet" href="css/components/tilt.css">
+  <!-- Стекло: подключается последним, поэтому перекрывает остальные стили -->
+  <link rel="stylesheet" href="css/components/glass.css">
+  <script>document.documentElement.classList.add("js")</script>
+</head>
+
+<body>
+  <div class="site">
+
+    <main>
+      <!-- 1. HERO -->
+      <section class="hero">
+        <div class="container hero__inner">
+          <div class="hero__left">
+            <h1 class="hero__title display">NordiGO</h1>
+            <div class="hero__subtitle">
+              <span class="hero__line"></span>
+              <p>Клуб скандинавської ходьби</p>
+            </div>
+            <div class="hero__forest">
+              <img loading="lazy" src="images/hero-forest.jpg" alt="Туристка з рюкзаком у лісі">
+              <a class="star" href="join.html"><span>Го з нами</span></a>
+            </div>
+          </div>
+          <div class="hero__right">
+            <img class="hero__road" src="images/hero-road.jpg" alt="Дівчина з палицями на дорозі">
+            <div class="hero__about text">
+              <h2 class="title">Що таке нордік?</h2>
+              <p>Нордік (скандинавська ходьба) – вид кардіо-тренувань, який виконується зі спеціальними палицями, які
+                дозволяють максимально задіяти не тільки нижню, а й верхню частину вашого тіла. Це корисна, доволі
+                проста та бюджетна активність, що дозволяє людям бути здоровими.</p>
+              <a class="more-link" href="what-is-nordic.html">Дізнатися більше</a>
+            </div>
+          </div>
+        </div>
+        <div class="side-social">
+          <a href="#" aria-label="Instagram"><img src="images/icons/instagram.svg" alt=""></a>
+          <a href="#" aria-label="Facebook"><img src="images/icons/facebook.svg" alt=""></a>
+          <a href="#" aria-label="Telegram"><img src="images/icons/telegram.svg" alt=""></a>
+        </div>
+      </section>
+
+      <!-- 2. ЧИМ КЛАСНИЙ НОРДІК -->
+      <section class="features">
+        <div class="container">
+          <h2 class="title">Чим класний нордік?</h2>
+          <div class="features__grid">
+            <article class="feature">
+              <div class="feature__num">01</div>
+              <h3 class="feature__title">Це корисно</h3>
+              <p>Нордік дозволяє задіяти 80-90% м’язів, позитивно впливає на серцево-судинну систему, додає витривалості
+                та гнучкості.</p>
+            </article>
+            <article class="feature">
+              <div class="feature__num">02</div>
+              <h3 class="feature__title">Це просто</h3>
+              <p>Знадобляться лише зручне взуття та спеціальні палиці. Палиці радимо спробувати різні та лише потім
+                купляти ті, що вам підходять.</p>
+            </article>
+            <article class="feature">
+              <div class="feature__num">03</div>
+              <h3 class="feature__title">Це цікаво</h3>
+              <p>Нордік – як ходяча медитація: знижує рівень тривожності, допомагає подолати депресивні стани та
+                покращує загальне самопочуття.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. ГО З НАМИ -->
+      <section class="go bg-sage">
+        <div class="go__rows display" aria-label="Го з нами">
+          <span>Го з нами</span><span aria-hidden="true">Го з нами</span><span aria-hidden="true">Го з нами</span>
+          <span aria-hidden="true">Го з нами</span><span aria-hidden="true">Го з нами</span><span aria-hidden="true">Го
+            з нами</span>
+          <span aria-hidden="true">Го з нами</span>
+        </div>
+        <img loading="lazy" class="go__photo" src="images/mountain.jpg" alt="Гори та сосни, вдалині — мандрівниця">
+        <a class="star" href="#" data-open-form><span>Спробуй</span></a>
+      </section>
+
+      <!-- 4. ДЕ ПОПУЛЯРНИЙ НОРДІК -->
+      <section class="popular">
+        <div class="container popular__inner">
+          <img loading="lazy" class="popular__collage" src="images/popular.webp" alt="Мандрівниця на гірській дорозі">
+          <div class="popular__text text">
+            <h2 class="title">Де популярний нордік?</h2>
+            <p>Скандинавська ходьба популярна в розвинених країнах, де люди звикли піклуватися про себе та своє
+              здоров’я: в Фінляндії, Норвегії, Швеції, Данії, Великобританії, США та інших.</p>
+            <p>Скандинавська ходьба популярна в розвинених країнах, де люди звикли піклуватися про себе та своє
+              здоров’я: в Фінляндії, Норвегії, Швеції, Данії, Великобританії, США та інших.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. МИ ХОЧЕМО... -->
+      <section class="manifest bg-sage">
+        <h2 class="manifest__text display">
+          <img loading="lazy" class="manifest__tree" src="images/forest-trees.jpg" alt="">
+          <img loading="lazy" class="manifest__branch" src="images/branch.jpg" alt="">
+          <span class="row-1">Ми хочемо,</span>
+          <span>щоб нордік</span>
+          <span>був популярним</span>
+          <span class="manifest__row-4"><span class="gap">і</span><span>в</span><img loading="lazy"
+              src="images/misty-strip.jpg" alt=""> Україні</span>
+        </h2>
+        <a class="star" href="join.html"><span>Приєднуйся</span></a>
+      </section>
+
+      <!-- 6. ДВІ КНОПКИ -->
+      <section class="cta">
+        <div class="cta__col">
+          <p>Практикуєте нордік на постійній основі та шукаєте компанію? Долучайтеся до клубу NordiGO</p>
+          <a class="btn" href="join.html">Приєднатися</a>
+        </div>
+        <div class="cta__col bg-teal">
+          <p>Хочете спробувати скандинавську ходьбу? Запишіться на пробне тренування.</p>
+          <a class="btn" href="#" data-open-form>Спробувати</a>
+        </div>
+      </section>
+    </main>
+
+  </div>
+
+  <script src="js/components.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/effects.js"></script>
+  <script src="js/tilt.js"></script>
+</body>
+
+</html>

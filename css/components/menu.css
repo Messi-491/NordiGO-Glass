@@ -1,0 +1,130 @@
+/* ===== МЕНЮ НА ВЕСЬ ЭКРАН ===== */
+.menu {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 100%;
+  max-width: var(--site-width);
+  transform: translateX(-50%);
+  z-index: 110;
+  display: grid;
+  grid-template-columns: 58.5% 41.5%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .35s, visibility .35s;
+}
+
+.menu.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Левая часть: размытое фото + слово NORDIGO + чёткое фото по центру */
+.menu__visual {
+  position: relative;
+  overflow: hidden;
+}
+
+.menu__bg {
+  position: absolute;
+  inset: -22px;
+  background: url("../../images/menu-photo.jpg") center / cover;
+  filter: blur(10px);
+}
+
+.menu__word {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  font-size: 140px;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+  z-index: 1;
+}
+
+.menu__photo {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  top: 82px;
+  width: 353px;
+  height: 589px;
+  object-fit: cover;
+  transform: translateX(-50%);
+}
+
+/* Правая часть: ссылки */
+.menu__panel {
+  background: var(--sage);
+  padding: 75px 0 0 90px;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu__label {
+  font-size: 21px;
+  margin-bottom: 30px;
+}
+
+.menu__link {
+  display: block;
+  font-size: 46px;
+  font-weight: 300;
+  line-height: 78px;
+}
+
+.menu__link:hover,
+.menu__link.is-current {
+  opacity: .6;
+}
+
+.menu__contact {
+  margin-top: auto;
+  padding-bottom: 60px;
+}
+
+.menu__email {
+  font-size: 24px;
+  display: block;
+  margin-bottom: 21px;
+}
+
+.menu__contact .social {
+  gap: 36px;
+}
+
+@media (max-width: 900px) {
+  .menu {
+    grid-template-columns: 1fr;
+  }
+
+  .menu__visual {
+    display: none;
+  }
+
+  .menu__panel {
+    padding: 90px 24px 0;
+  }
+
+  .menu__label {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .menu__link {
+    font-size: 32px;
+    line-height: 64px;
+  }
+
+  .menu__email {
+    font-size: 20px;
+  }
+
+  .menu__contact {
+    padding-bottom: 40px;
+  }
+}

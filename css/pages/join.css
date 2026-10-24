@@ -1,0 +1,304 @@
+/* ===== СТРАНИЦА "ЯК ПРИЄДНАТИСЯ" (join.html) ===== */
+
+/* Верх: слева текст + два формата, справа большое фото */
+.join-top {
+  display: grid;
+  grid-template-columns: 819px 1fr;
+  height: 807px;
+}
+
+.join-top__left {
+  display: flex;
+  flex-direction: column;
+}
+
+.join-top__intro {
+  height: 430px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 45px 68px 0;
+}
+
+.join-top__title {
+  font-size: clamp(27px, 3.4vw, 50px);
+  line-height: 1.17;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  text-align: center;
+}
+
+.join-top__formats {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.format {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 42px 30px 36px;
+  text-align: center;
+}
+
+.format+.format {
+  border-left: 1px solid rgba(255, 255, 255, .4);
+  margin: 30px 0;
+  padding: 12px 30px 6px;
+}
+
+.format:first-child {
+  padding-top: 42px;
+}
+
+.format b {
+  display: block;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.format p {
+  font-size: 21px;
+  line-height: 1.3;
+  max-width: 225px;
+  margin: 0 auto;
+}
+
+.format .btn {
+  min-width: 237px;
+  height: 81px;
+}
+
+.join-top__photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Что важно знать: используем те же 01 02 03, что и на главной */
+.know {
+  padding: 60px 0 120px;
+  position: relative;
+}
+
+.know .features__grid {
+  margin-top: 52px;
+}
+
+.know .feature p {
+  font-size: 14px;
+  max-width: 248px;
+}
+
+.know .feature__title {
+  font-size: 33px;
+}
+
+/* Instagram: заголовок + звезда + слайдер */
+.insta {
+  position: relative;
+  padding: 45px 0 82px;
+  overflow: hidden;
+}
+
+.insta__title {
+  font-size: clamp(30px, 4.2vw, 60px);
+  line-height: 1.1;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  max-width: 525px;
+}
+
+.insta .star {
+  right: 75px;
+  top: -45px;
+  width: 330px;
+}
+
+.carousel {
+  margin-top: 68px;
+  overflow: hidden;
+}
+
+.carousel__track {
+  display: flex;
+  gap: 78px;
+  transition: transform .5s ease;
+}
+
+.carousel__item {
+  position: relative;
+  flex: 0 0 330px;
+}
+
+.carousel__item img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.carousel__controls {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.carousel__btn {
+  padding: 4px;
+  opacity: .9;
+}
+
+.carousel__btn img {
+  width: 20px;
+  height: 8px;
+}
+
+.carousel__btn:disabled {
+  opacity: .35;
+  cursor: default;
+}
+
+@media (max-width: 1280px) {
+  .join-top {
+    grid-template-columns: 1fr 1fr;
+    height: 760px;
+  }
+
+  .join-top__intro {
+    height: 52%;
+    padding: 60px 30px 0;
+  }
+
+  .format b {
+    font-size: 20px;
+  }
+
+  .format p {
+    font-size: 20px;
+  }
+
+  .format .btn {
+    min-width: 160px;
+    height: 70px;
+    font-size: 22px;
+  }
+
+  .know .features__grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .insta .star {
+    width: 28vw;
+    top: -4vw;
+    right: 3vw;
+  }
+
+  .carousel__track {
+    gap: 5%;
+  }
+
+  .carousel__item {
+    flex: 0 0 30%;
+  }
+}
+
+@media (max-width: 768px) {
+  .join-top {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  .join-top__photo {
+    order: -1;
+    height: 80vw;
+  }
+
+  .join-top__intro {
+    height: auto;
+    padding: 36px 20px;
+  }
+
+  .join-top__formats {
+    grid-template-columns: 1fr;
+  }
+
+  .format,
+  .format+.format {
+    padding: 30px 20px;
+    margin: 0;
+    border-left: 0;
+    gap: 20px;
+  }
+
+  .format+.format {
+    border-top: 1px solid rgba(255, 255, 255, .4);
+  }
+
+  .format b,
+  .format p {
+    font-size: 17px;
+  }
+
+  .format .btn {
+    min-width: 160px;
+    height: 56px;
+    font-size: 16px;
+  }
+
+  .know {
+    padding: 40px 0 40px;
+    text-align: center;
+  }
+
+  .know .features__grid {
+    grid-template-columns: 1fr;
+    margin-top: 20px;
+  }
+
+  .know .feature p {
+    font-size: 14px;
+  }
+
+  .know .title {
+    font-size: 20px;
+    padding: 0 20px;
+  }
+
+  .know .feature__title {
+    font-size: 24px;
+  }
+
+  .insta {
+    padding: 30px 15px 50px;
+  }
+
+  .insta__title {
+    font-size: 34px;
+  }
+
+  .insta .star {
+    position: relative;
+    display: flex;
+    right: auto;
+    top: auto;
+    margin: 20px auto 0;
+  }
+
+  .carousel {
+    margin-top: 30px;
+  }
+
+  .carousel__track {
+    gap: 4%;
+  }
+
+  .carousel__item {
+    flex: 0 0 78%;
+  }
+}

@@ -1,0 +1,65 @@
+/* ===== КАРКАС: контейнер и общие заголовки ===== */
+.container {
+  width: 100%;
+  max-width: var(--content);
+  margin: 0 auto;
+  position: relative;
+}
+
+.bg-sage {
+  background: var(--sage);
+}
+
+.bg-teal {
+  background: var(--teal);
+}
+
+/* Рамка всего сайта: шапка, страница и подвал живут внутри неё */
+.site {
+  max-width: var(--site-width);
+  margin: 0 auto;
+  position: relative;
+  background: var(--green);
+  overflow: hidden;
+}
+
+/* Большой декоративный заголовок (шрифт display, заглавные) */
+.display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+
+/* Обычный заголовок секции */
+.title {
+  font-size: 36px;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+.text p+p {
+  margin-top: 1.4em;
+}
+
+/* Боковые поля, когда экран уже сайта */
+@media (max-width: 1280px) {
+  .container {
+    padding: 0 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0;
+  }
+
+  body {
+    font-size: 14px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+}

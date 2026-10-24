@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Блог — NordiGO</title>
+  <meta name="description" content="NordiGO — клуб скандинавської ходьби в Україні">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&family=Playfair+Display:wght@400;500&display=swap"
+    rel="stylesheet">
+  <!-- Стили: порядок важен — сначала основа, потом блоки, потом страницы -->
+  <link rel="stylesheet" href="css/base/variables.css">
+  <link rel="stylesheet" href="css/base/reset.css">
+  <link rel="stylesheet" href="css/base/layout.css">
+  <link rel="stylesheet" href="css/components/header.css">
+  <link rel="stylesheet" href="css/components/menu.css">
+  <link rel="stylesheet" href="css/components/footer.css">
+  <link rel="stylesheet" href="css/components/buttons.css">
+  <link rel="stylesheet" href="css/components/star.css">
+  <link rel="stylesheet" href="css/components/modal.css">
+  <link rel="stylesheet" href="css/pages/home.css">
+  <link rel="stylesheet" href="css/pages/what.css">
+  <link rel="stylesheet" href="css/pages/join.css">
+  <link rel="stylesheet" href="css/pages/blog.css">
+  <link rel="stylesheet" href="css/pages/contacts.css">
+  <link rel="stylesheet" href="css/pages/about.css">
+  <!-- Эффекты: можно убрать эту строку и js/effects.js внизу, если не нужны -->
+  <link rel="stylesheet" href="css/components/effects.css">
+  <link rel="stylesheet" href="css/components/tilt.css">
+  <!-- Стекло: подключается последним, поэтому перекрывает остальные стили -->
+  <link rel="stylesheet" href="css/components/glass.css">
+  <script>document.documentElement.classList.add("js")</script>
+</head>
+
+<body>
+  <div class="site">
+
+    <main class="blog">
+      <div class="blog__inner">
+        <div class="blog__head">
+          <h1 class="blog__label">Блог</h1>
+          <div class="blog__tabs display" style="text-transform:none">
+            <button class="blog__tab is-active" data-filter="all">Всі</button><span class="blog__sep">/</span><button
+              class="blog__tab" data-filter="news">Новини</button><span class="blog__sep">/</span><button
+              class="blog__tab" data-filter="article">Статті</button>
+          </div>
+        </div>
+        <div class="blog__grid">
+          <article class="card" data-type="article">
+            <a href="#" data-article="1"><img loading="lazy" class="card__img" src="images/blog-1.jpg" alt=""></a>
+            <h2 class="card__title">На що впливає скандинавська ходьба</h2>
+            <div class="card__meta"><span class="card__date">11 листопада, 2020</span><a class="btn-orange" href="#"
+                data-article="1">Читати →</a></div>
+          </article>
+          <article class="card" data-type="article">
+            <a href="#" data-article="2"><img loading="lazy" class="card__img" src="images/blog-2.jpg" alt=""></a>
+            <h2 class="card__title">Особистий досвід: як я почав займатися нордіком</h2>
+            <div class="card__meta"><span class="card__date">5 листопада, 2020</span><a class="btn-orange" href="#"
+                data-article="2">Читати →</a></div>
+          </article>
+          <article class="card" data-type="news">
+            <a href="#" data-article="3"><img loading="lazy" class="card__img" src="images/blog-3.jpg" alt=""></a>
+            <h2 class="card__title">Як і де проходитимуть тренування у листопаді</h2>
+            <div class="card__meta"><span class="card__date">25 жовтня, 2020</span><a class="btn-orange" href="#"
+                data-article="3">Читати →</a></div>
+          </article>
+          <article class="card" data-type="article">
+            <a href="#" data-article="4"><img loading="lazy" class="card__img" src="images/blog-4.jpg" alt=""></a>
+            <h2 class="card__title">Топ-10 місць для занять нордіком у Києві</h2>
+            <div class="card__meta"><span class="card__date">14 жовтня, 2020</span><a class="btn-orange" href="#"
+                data-article="4">Читати →</a></div>
+          </article>
+          <article class="card" data-type="news">
+            <a href="#" data-article="5"><img loading="lazy" class="card__img" src="images/blog-5.jpg" alt=""></a>
+            <h2 class="card__title">Як проходять тренування у клубі NordiGo</h2>
+            <div class="card__meta"><span class="card__date">10 жовтня, 2020</span><a class="btn-orange" href="#"
+                data-article="5">Читати →</a></div>
+          </article>
+          <article class="card" data-type="article">
+            <a href="#" data-article="6"><img loading="lazy" class="card__img" src="images/blog-6.jpg" alt=""></a>
+            <h2 class="card__title">Нордік: з чого почати тренування</h2>
+            <div class="card__meta"><span class="card__date">1 жовтня, 2020</span><a class="btn-orange" href="#"
+                data-article="6">Читати →</a></div>
+          </article>
+        </div>
+        <a class="to-top blog__top" href="#" aria-label="Наверх"><img src="images/icons/arrow-up.svg" alt=""></a>
+      </div>
+    </main>
+
+  </div>
+
+  <script src="js/components.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/articles.js"></script>
+  <script src="js/effects.js"></script>
+  <script src="js/tilt.js"></script>
+</body>
+
+</html>

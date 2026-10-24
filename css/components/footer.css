@@ -1,0 +1,36 @@
+/* ===== ПОДВАЛ ===== */
+.footer {
+  background: var(--dark);
+  height: 56px;
+  padding: 0 36px 0 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 15px;
+}
+
+.footer .logo {
+  font-size: 16px;
+}
+
+.footer .social {
+  gap: 39px;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    height: auto;
+    padding: 24px 15px;
+    flex-direction: column;
+    gap: 18px;
+    font-size: 11px;
+  }
+
+  .footer .logo {
+    font-size: 14px;
+  }
+
+  .footer .social {
+    gap: 30px;
+  }
+}

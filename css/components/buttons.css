@@ -1,0 +1,105 @@
+/* ===== КНОПКИ И ССЫЛКИ ===== */
+
+/* Прямоугольная кнопка с белой рамкой ("Приєднатися", "Спробувати") */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 237px;
+  height: 88px;
+  border: 1px solid var(--white);
+  font-size: 24px;
+  font-weight: 500;
+  transition: background .25s, color .25s;
+}
+
+.btn:hover {
+  background: var(--white);
+  color: var(--green);
+  
+}
+
+.bg-teal .btn:hover {
+  color: var(--teal);
+}
+
+/* Ссылка с линией: ——— Дізнатися більше */
+.more-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.more-link::before {
+  content: "";
+  width: 68px;
+  height: 1px;
+  background: var(--white);
+}
+
+.more-link:hover {
+  opacity: .7;
+}
+
+/* Оранжевая кнопка "ЧИТАТИ →" */
+.btn-orange {
+  display: inline-block;
+  background: var(--orange);
+  padding: 6px 9px;
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.btn-orange:hover {
+  background: #e63e14;
+}
+
+/* Квадратная кнопка "наверх" */
+.to-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border: 1px solid rgba(255, 255, 255, .5);
+}
+
+.to-top img {
+  width: 9px;
+  height: 26px;
+  opacity: .6;
+}
+
+.to-top:hover {
+  background: rgba(255, 255, 255, .15);
+}
+
+@media (max-width: 768px) {
+  .btn {
+    min-width: 143px;
+    height: 60px;
+    font-size: 16px;
+  }
+
+  .more-link {
+    font-size: 14px;
+    gap: 12px;
+  }
+
+  .more-link::before {
+    width: 40px;
+  }
+
+  .btn-orange {
+    font-size: 12px;
+    padding: 5px 8px;
+  }
+
+  .to-top {
+    width: 44px;
+    height: 44px;
+  }
+}

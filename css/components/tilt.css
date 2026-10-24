@@ -1,0 +1,14 @@
+/* ===== 3D-НАКЛОН ФОТО ПРИ НАВЕДЕНИИ =====
+   JS (js/tilt.js) считает наклон по положению курсора и пишет его в --rx и --ry. */
+[data-tilt] {
+  transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transition: transform .25s ease-out, box-shadow .3s ease;
+  will-change: transform;
+}
+[data-tilt].is-tilting {
+  box-shadow: 0 22px 44px rgba(0, 0, 0, .3);
+  transition: transform .08s linear, box-shadow .3s ease;   /* пока двигаем мышь — следует за курсором без задержки */
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-tilt] { transform: none; transition: none; }
+}

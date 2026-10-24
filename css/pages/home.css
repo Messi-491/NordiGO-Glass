@@ -1,0 +1,627 @@
+/* ===== ГЛАВНАЯ СТРАНИЦА (index.html) =====
+   Разделы по порядку: 1 hero · 2 features · 3 go · 4 popular · 5 manifest · 6 cta */
+
+/* ---------- 1. HERO: логотип, фото, "Що таке нордік?" ---------- */
+.hero {
+  position: relative;
+  padding: 69px 0 52px;
+}
+
+.hero__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.hero__left {
+  width: 600px;
+  padding-left: 6px;
+}
+
+.hero__right {
+  width: 447px;
+}
+
+.hero__title {
+  margin-top: 51px;
+  font-size: clamp(48px, 9.9vw, 142px);
+  letter-spacing: 0.01em;
+}
+
+.hero__subtitle {
+  display: flex;
+  align-items: center;
+  gap: 27px;
+  margin-top: 52px;
+}
+
+.hero__line {
+  width: 145px;
+  height: 1px;
+  background: var(--white);
+  flex-shrink: 0;
+}
+
+.hero__subtitle p {
+  font-size: 28px;
+  line-height: 1.2;
+  max-width: 285px;
+}
+
+.hero__forest {
+  position: relative;
+  margin-top: 68px;
+  width: 567px;
+}
+
+.hero__forest img {
+  width: 100%;
+}
+
+.hero__forest .star {
+  left: -164px;
+  top: 6px;
+  width: 362px;
+}
+
+.hero__road {
+  width: 447px;
+  height: 636px;
+  object-fit: cover;
+}
+
+.hero__about {
+  margin-top: 60px;
+}
+
+.hero__about .title {
+  margin-bottom: 38px;
+}
+
+.hero__about .more-link {
+  margin-top: 48px;
+}
+
+.hero .side-social {
+  top: 308px;
+  right: 30px;
+}
+
+/* ---------- 2. FEATURES: "Чим класний нордік?" 01 02 03 ---------- */
+.features {
+  padding-top: 60px;
+  padding-bottom: 142px;
+}
+
+.features__grid {
+  display: grid;
+  grid-template-columns: 344px 440px 1fr;
+  margin-top: 90px;
+}
+
+.feature {
+  position: relative;
+  padding-left: 6px;
+}
+
+.feature:nth-child(2) {
+  padding-left: 79px;
+}
+
+.feature:nth-child(3) {
+  padding-left: 61px;
+}
+
+.feature:nth-child(n+2)::before {
+  /* вертикальная линия-разделитель */
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 112px;
+  bottom: 0;
+  width: 1px;
+  background: rgba(255, 255, 255, .4);
+}
+
+.feature__num {
+  font-family: var(--font-display);
+  font-size: 172px;
+  line-height: 142px;
+  color: var(--sage);
+}
+
+.feature__title {
+  position: relative;
+  margin-top: -34px;
+  font-size: 36px;
+  line-height: 1.2;
+  font-weight: 300;
+}
+
+.feature p {
+  margin-top: 21px;
+  max-width: 255px;
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+/* ---------- 3. GO: "ГО З НАМИ" + гора + звезда "СПРОБУЙ" ---------- */
+.go {
+  position: relative;
+  height: 8.44em;
+  overflow: hidden;
+  font-size: clamp(36px, 6.67vw, 96px);
+}
+
+.go__rows {
+  padding-top: .78em;
+  text-align: center;
+  line-height: 1;
+}
+
+.go__rows span {
+  display: block;
+  line-height: 1;
+}
+
+.go__photo {
+  position: absolute;
+  left: 50%;
+  top: 1.31em;
+  width: 4.22em;
+  height: 5.69em;
+  object-fit: cover;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.go .star {
+  right: .22em;
+  top: 4.84em;
+  width: 3.52em;
+}
+
+/* ---------- 4. POPULAR: "Де популярний нордік?" ---------- */
+.popular {
+  padding: 46px 0 75px;
+}
+
+.popular__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.popular__collage {
+  width: 558px;
+}
+
+.popular__text {
+  width: 450px;
+  margin: 231px 90px 0 0;
+}
+
+.popular__text .title {
+  margin-bottom: 38px;
+}
+
+/* ---------- 5. MANIFEST: "МИ ХОЧЕМО, ЩОБ НОРДІК БУВ ПОПУЛЯРНИМ І В УКРАЇНІ" ----------
+   Все размеры внутри в "em", поэтому блок сам уменьшается вместе со шрифтом */
+.manifest {
+  position: relative;
+  height: 814px;
+  overflow: hidden;
+}
+
+.manifest__text {
+  position: absolute;
+  left: 50%;
+  top: 131px;
+  transform: translateX(-50%);
+  width: 9.4em;
+  text-align: center;
+  font-size: clamp(22px, 5.9vw, 85px);
+  line-height: 1.4;
+  letter-spacing: 0;
+}
+
+.manifest__text span {
+  display: block;
+  white-space: nowrap;
+}
+
+.manifest__text .row-1 {
+  text-align: right;
+}
+
+.manifest__row-4 {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: .3em;
+}
+
+.manifest__row-4 .gap {
+  margin-right: .35em;
+}
+
+/* пробел между «і» и «в» */
+.manifest__row-4 img {
+  width: 3.3em;
+  height: 1.22em;
+  object-fit: cover;
+}
+
+.manifest__tree {
+  position: absolute;
+  left: 0;
+  top: -.03em;
+  width: 2.4em;
+  height: 2.6em;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.manifest__branch {
+  position: absolute;
+  left: 9.6em;
+  top: .8em;
+  width: 1.09em;
+  height: 1.92em;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.manifest .star {
+  left: 12px;
+  top: 468px;
+  width: 338px;
+}
+
+/* ---------- 6. CTA: две колонки с кнопками ---------- */
+.cta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 442px;
+}
+
+.cta__col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 42px;
+  padding: 30px 45px;
+  text-align: center;
+}
+
+.cta__col p {
+  max-width: 450px;
+  font-size: 30px;
+  line-height: 1.5;
+}
+
+/* ================= АДАПТИВ ================= */
+@media (max-width: 1280px) {
+  .hero__left {
+    width: 52%;
+  }
+
+  .hero__right {
+    width: 40%;
+  }
+
+  .hero__forest {
+    width: 100%;
+  }
+
+  .hero__forest .star {
+    left: -10%;
+    width: 60%;
+  }
+
+  .hero__road {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 596 / 848;
+  }
+
+  .hero__subtitle {
+    gap: 20px;
+  }
+
+  .hero__line {
+    width: 100px;
+  }
+
+  .hero__subtitle p {
+    font-size: 28px;
+  }
+
+  .hero__about .more-link {
+    margin-top: 40px;
+  }
+
+  .features__grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 0 20px;
+  }
+
+  .feature,
+  .feature:nth-child(2),
+  .feature:nth-child(3) {
+    padding-left: 30px;
+  }
+
+  .feature__num {
+    font-size: 160px;
+    line-height: 140px;
+  }
+
+  .feature__title {
+    font-size: 34px;
+    margin-top: -30px;
+  }
+
+  .feature:nth-child(n+2)::before {
+    top: 110px;
+  }
+
+  .popular__collage {
+    width: 52%;
+  }
+
+  .popular__text {
+    width: 40%;
+    margin: 15vw 20px 0 0;
+  }
+
+  .manifest {
+    height: 78vw;
+  }
+
+  .manifest__text {
+    top: 12vw;
+  }
+
+  .manifest .star {
+    width: 28vw;
+    top: 44vw;
+  }
+
+  .cta__col p {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  /* --- hero: две колонки, как в мобильном макете --- */
+  .hero {
+    padding: 58px 15px 40px;
+  }
+
+  /* Верстка hero на телефоне: слева заголовок и фото, справа фото,
+     а блок «Що таке нордік?» опускается вниз на всю ширину (display: contents "вынимает" детей из правой колонки) */
+  .hero__inner {
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .hero__left {
+    width: calc(50% - 6px);
+    padding: 0;
+  }
+
+  /* две равные колонки, 6px — половина зазора */
+  .hero__right {
+    display: contents;
+  }
+
+  .hero__road {
+    width: calc(50% - 6px);
+  }
+
+  .hero__title {
+    margin-top: 28px;
+    font-size: 8.2vw;
+    letter-spacing: 0;
+    white-space: nowrap;
+  }
+
+  /* чтобы слово NORDIGO целиком помещалось в левую колонку */
+  .hero__subtitle {
+    margin-top: 12px;
+    gap: 10px;
+  }
+
+  .hero__line {
+    width: 30px;
+  }
+
+  .hero__subtitle p {
+    font-size: 13px;
+  }
+
+  .hero__forest {
+    margin-top: 18px;
+  }
+
+  .hero__forest .star {
+    left: -6%;
+    top: 62%;
+    width: 60%;
+  }
+
+  .hero__about {
+    width: 100%;
+    margin-top: 48px;
+  }
+
+  /* отступ, чтобы звезда не заезжала на заголовок */
+  .hero__about .title {
+    margin-bottom: 14px;
+  }
+
+  /* --- features: колонки друг под другом по центру --- */
+  .features {
+    padding: 50px 0 40px;
+    text-align: center;
+  }
+
+  .features .title {
+    font-size: 22px;
+  }
+
+  .features__grid {
+    grid-template-columns: 1fr;
+    margin-top: 30px;
+    padding: 0 20px;
+  }
+
+  .feature,
+  .feature:nth-child(2),
+  .feature:nth-child(3) {
+    padding: 0 0 36px;
+    margin-bottom: 36px;
+  }
+
+  .feature:not(:last-child) {
+    border-bottom: 1px solid rgba(255, 255, 255, .35);
+    width: 160px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .feature:nth-child(n+2)::before {
+    display: none;
+  }
+
+  .feature {
+    width: 100%;
+    max-width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .feature:not(:last-child) {
+    max-width: 280px;
+    width: 100%;
+    border-bottom: 0;
+  }
+
+  .feature__num {
+    font-size: 140px;
+    line-height: 120px;
+    text-align: left;
+    padding-left: 20px;
+  }
+
+  .feature__title {
+    font-size: 24px;
+    margin-top: -28px;
+    text-align: left;
+    padding-left: 30px;
+  }
+
+  .feature p {
+    font-size: 14px;
+    text-align: left;
+    margin-top: 12px;
+    max-width: 220px;
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+  /* --- go --- */
+  .go {
+    height: 620px;
+    font-size: 12vw;
+  }
+
+  .go__rows {
+    padding-top: 20px;
+  }
+
+  .go__photo {
+    width: 66%;
+    height: 335px;
+    top: 82px;
+  }
+
+  .go .star {
+    width: 150px;
+    right: auto;
+    left: 50%;
+    top: 450px;
+    transform: translateX(-50%);
+  }
+
+  .go .star:hover {
+    transform: translateX(-50%) scale(1.05);
+  }
+
+  /* --- popular --- */
+  .popular {
+    padding: 20px 15px;
+  }
+
+  .popular__inner {
+    gap: 10px;
+  }
+
+  .popular__collage {
+    width: 50%;
+  }
+
+  .popular__text {
+    width: 47%;
+    margin: 0;
+  }
+
+  .popular__text .title {
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+
+  .popular__text p {
+    font-size: 12px;
+  }
+
+  .popular__text p+p {
+    display: none;
+  }
+
+  /* --- manifest --- */
+  .manifest {
+    height: 410px;
+  }
+
+  .manifest__text {
+    top: 36px;
+    font-size: 9.5vw;
+    line-height: 1.2;
+  }
+
+  .manifest .star {
+    width: 150px;
+    left: 50%;
+    top: 230px;
+    transform: translateX(-50%);
+  }
+
+  /* --- cta --- */
+  .cta {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  .cta__col {
+    gap: 26px;
+    padding: 44px 24px;
+  }
+
+  .cta__col p {
+    font-size: 17px;
+  }
+}

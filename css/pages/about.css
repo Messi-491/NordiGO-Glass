@@ -1,0 +1,128 @@
+/* ===== СТРАНИЦА "ПРО НОРДІК ТА КЛУБ" (about.html) ===== */
+.about {
+  padding: 75px 0 90px;
+}
+
+.about__inner {
+  max-width: 1158px;
+  margin: 0 auto;
+}
+
+.about__title {
+  font-size: clamp(33px, 4.3vw, 62px);
+  line-height: 1.07;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  max-width: 525px;
+  margin-bottom: 57px;
+}
+
+.about__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px 60px;
+}
+
+.about-card {
+  border: 1px solid rgba(255, 255, 255, .55);
+  padding: 23px 23px 21px;
+  display: flex;
+  flex-direction: column;
+  min-height: 420px;
+}
+
+.about-card img {
+  width: 100%;
+  aspect-ratio: 400 / 246;
+  object-fit: cover;
+}
+
+.about-card__meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 10px;
+  margin-top: 8px;
+}
+
+.about-card__podcast {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.about-card__podcast i {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: linear-gradient(90deg, #fff 1px, transparent 1px) 0 0 / 2px 100%;
+  opacity: .8;
+}
+
+.about-card h2 {
+  font-size: 27px;
+  font-weight: 300;
+  line-height: 1.2;
+  margin-top: 6px;
+}
+
+.about-card .more-link {
+  margin: auto 0 0 auto;
+  font-size: 11px;
+  font-weight: 300;
+  gap: 6px;
+}
+
+.about-card .more-link::before {
+  width: 32px;
+}
+
+.about__top {
+  margin-top: 68px;
+}
+
+@media (max-width: 1280px) {
+  .about {
+    padding: 100px 20px 80px;
+  }
+
+  .about__grid {
+    gap: 40px 30px;
+  }
+
+  .about-card {
+    padding: 20px;
+    min-height: 0;
+  }
+
+  .about-card h2 {
+    font-size: 26px;
+    min-height: 2.4em;
+  }
+
+  .about-card .more-link {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 900px) {
+  .about__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .about {
+    padding: 76px 15px 50px;
+  }
+
+  .about__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about__title {
+    margin-bottom: 30px;
+    font-size: 34px;
+  }
+}

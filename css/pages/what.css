@@ -1,0 +1,310 @@
+/* ===== СТРАНИЦА "ЩО ТАКЕ НОРДІК" (what-is-nordic.html) ===== */
+.what-intro {
+  padding: 108px 0 68px;
+}
+
+.what-intro__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.what-intro__collage {
+  width: 585px;
+  margin-left: -3px;
+}
+
+.what-intro__text {
+  width: 435px;
+  margin-right: 0;
+}
+
+.what-intro__title {
+  font-size: clamp(42px, 5.6vw, 81px);
+  line-height: 1.02;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  margin-bottom: 27px;
+}
+
+.what-intro__text p {
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+/* История: текст слева (смещён), фото-скала справа */
+.history {
+  padding: 0 0 52px;
+}
+
+.history__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.history__text {
+  width: 360px;
+  margin-left: 232px;
+}
+
+.history__text .title {
+  margin-bottom: 21px;
+}
+
+.history__text p,
+.popular-world__text p {
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.history__photo {
+  width: 327px;
+}
+
+/* Две фотографии слева + текст справа */
+.popular-world {
+  padding: 0 0 75px;
+}
+
+.popular-world__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.popular-world__collage {
+  width: 585px;
+  margin-left: -3px;
+}
+
+.popular-world__text {
+  width: 435px;
+  margin-top: 45px;
+}
+
+.popular-world__text .title {
+  font-size: 28px;
+  margin-bottom: 27px;
+}
+
+/* Большая панорама на всю ширину */
+.panorama {
+  width: 100%;
+  height: 810px;
+  object-fit: cover;
+}
+
+/* Почему популярен + звезда */
+.why {
+  position: relative;
+  padding: 82px 0 45px;
+}
+
+.why__text {
+  width: 345px;
+  margin-left: 232px;
+}
+
+.why__text .title {
+  margin-bottom: 22px;
+}
+
+.why__text p {
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.why .star {
+  right: 142px;
+  top: 52px;
+  width: 334px;
+}
+
+.pluses {
+  padding: 45px 0 90px;
+}
+
+.pluses__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.pluses__photo {
+  width: 585px;
+  margin-left: -3px;
+}
+
+.pluses__text {
+  width: 435px;
+  margin-right: 22px;
+}
+
+.pluses__text .title {
+  font-size: 28px;
+  margin-bottom: 38px;
+}
+
+.pluses__text p {
+  font-size: 16px;
+  line-height: 1.55;
+  margin-top: 1.5em;
+}
+
+.pluses__text .lead {
+  margin-top: 0;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.cta-word {
+  padding: 45px 0 75px;
+  text-align: center;
+  font-size: clamp(36px, 5.8vw, 84px);
+}
+
+@media (max-width: 1100px) {
+
+  .what-intro__collage,
+  .popular-world__collage,
+  .pluses__photo {
+    width: 50%;
+  }
+
+  .what-intro__text,
+  .popular-world__text,
+  .pluses__text {
+    width: 44%;
+    margin-right: 0;
+  }
+
+  .history__text {
+    width: 46%;
+    margin-left: 10%;
+  }
+
+  .history__photo {
+    width: 34%;
+  }
+
+  .panorama {
+    height: 56vw;
+  }
+
+  .why__text {
+    width: 50%;
+    margin-left: 10%;
+  }
+
+  .why .star {
+    width: 30vw;
+    right: 4vw;
+  }
+
+  .what-intro__text p,
+  .history__text p,
+  .popular-world__text p,
+  .why__text p,
+  .pluses__text p {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .what-intro {
+    padding: 76px 0 40px;
+  }
+
+  .what-intro__inner,
+  .history__inner,
+  .popular-world__inner,
+  .pluses__inner {
+    flex-direction: column;
+    gap: 24px;
+    padding: 0 15px;
+  }
+
+  .popular-world__inner,
+  .pluses__inner {
+    flex-direction: column;
+  }
+
+  .what-intro__collage,
+  .popular-world__collage,
+  .pluses__photo,
+  .history__photo {
+    width: 100%;
+    margin: 0;
+  }
+
+  .what-intro__text,
+  .popular-world__text,
+  .pluses__text,
+  .history__text {
+    width: 100%;
+    margin: 0;
+  }
+
+  .history__photo {
+    order: -1;
+  }
+
+  .what-intro__text p,
+  .history__text p,
+  .popular-world__text p,
+  .why__text p,
+  .pluses__text p {
+    font-size: 14px;
+  }
+
+  .popular-world__text .title,
+  .pluses__text .title {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+
+  .history {
+    padding-bottom: 30px;
+  }
+
+  .popular-world {
+    padding-bottom: 40px;
+  }
+
+  .panorama {
+    height: 90vw;
+  }
+
+  .why {
+    padding: 40px 15px 20px;
+  }
+
+  .why__text {
+    width: 100%;
+    margin: 0;
+  }
+
+  .why .star {
+    position: relative;
+    display: flex;
+    right: auto;
+    top: auto;
+    margin: 30px auto 0;
+  }
+
+  .pluses {
+    padding: 30px 0 50px;
+  }
+
+  .pluses__photo {
+    height: 80vw;
+    object-fit: cover;
+  }
+
+  .cta-word {
+    padding: 30px 0 50px;
+    font-size: 13vw;
+  }
+}

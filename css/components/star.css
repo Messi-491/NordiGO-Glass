@@ -1,0 +1,45 @@
+/* ===== ОРАНЖЕВАЯ ЗВЕЗДА С НАДПИСЬЮ =====
+   Размер задаётся прямо на элементе: style="width:446px"
+   Положение — классами страниц (position: absolute) */
+.star {
+  position: absolute;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 4;
+  transition: transform .4s;
+}
+
+.star:hover {
+  transform: scale(1.05);
+}
+
+/* Фон звезды — отдельный слой, чтобы вращать его, не вращая надпись (скорость — в effects.css) */
+.star::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../../images/icons/star.svg") center / 100% 100% no-repeat;
+}
+
+.star span {
+  position: relative;
+  /* надпись выше вращающегося фона */
+  transform: rotate(-24deg);
+  font-size: 27px;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.1;
+}
+
+@media (max-width: 768px) {
+  .star {
+    width: 150px !important;
+  }
+
+  .star span {
+    font-size: 13px;
+  }
+}

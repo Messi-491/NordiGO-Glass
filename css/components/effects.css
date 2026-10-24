@@ -1,0 +1,60 @@
+/* ===== ВИЗУАЛЬНЫЕ ЭФФЕКТЫ =====
+   Всё, что "двигается" на сайте, собрано здесь и в js/effects.js.
+   Не нравится эффект — удали нужный блок ниже (или подключение файла в HTML), сайт не сломается. */
+
+/* 1. Плавное появление блоков при прокрутке.
+   Класс .js ставится на <html> скриптом в <head>: если JS не работает, всё просто видно сразу. */
+.js .reveal {
+   opacity: 0;
+   translate: 0 26px;
+   /* translate, а не transform: не ломает центрирование блоков */
+   transition: opacity .8s ease, translate .8s ease;
+}
+
+.js .reveal.is-visible {
+   opacity: 1;
+   translate: none;
+}
+
+/* 2. Параллакс: JS пишет сдвиг в переменную --shift, CSS его применяет.
+   Свойство translate не мешает обычному transform (например, центрированию фото). */
+[data-parallax] {
+   translate: 0 var(--shift, 0px);
+   will-change: translate;
+}
+
+/* 3. Звёзды: медленно вращаются, при наведении ускоряются */
+.star::before {
+   animation: star-spin 40s linear infinite;
+}
+
+.star:hover::before {
+   animation-duration: 8s;
+}
+
+@keyframes star-spin {
+   to {
+      transform: rotate(360deg);
+   }
+}
+
+/* Если в настройках телефона или компьютера включено "уменьшить движение" — всё это отключаем */
+@media (prefers-reduced-motion: reduce) {
+   .js .reveal {
+      opacity: 1;
+      translate: none;
+      transition: none;
+   }
+
+   [data-parallax] {
+      translate: none;
+   }
+
+   .star::before {
+      animation: none;
+   }
+
+   html {
+      scroll-behavior: auto;
+   }
+}
